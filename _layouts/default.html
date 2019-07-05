@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "zh-TW" }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+{% seo %}
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!-- Theme: https://contributions.taminomartinius.de/ -->
+    <div class="app">
+      <div class="app__content">
+        <header class="header">
+          <h1>{{ site.title }} | {{ site.description }}</h1>
+        </header>
+        <div class="row row--full">
+          {% for service in site.data.services %}
+          {% assign pid = forloop.index %}
+          <div class="card contribution-comparison" style="height: auto">
+            <div class="card__title">
+              <h2>{{ service.name }}</h2>
+            </div>
+            <div class="card__content">
+              {% for node in service.nodes %}
+              <div class="legend" style="grid-template-columns: 1fr 1fr; display: block;">
+                <div class="node" data-hostname="{{ node.hostname }}">
+                  <div class="legend__color" style="--color:var(--color-offline);"></div>
+                  <div class="legend__title">{{ node.name }}</div>
+                  <div class="legend__value">Unknown</div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <footer class="footer">
+          <div class="footer__content">
+            <div class="footer__left"></div>
+            <div class="footer__center">
+              <a href="https://basaltic.tw">Basaltic Studio</a>
+            </div>
+            <div class="footer__right"></div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script src="{{ "/assets/js/status.js?v=" | append: site.github.build_revision | relative_url }}" type="application/javascript" async></script>
+  </body>
+</html>

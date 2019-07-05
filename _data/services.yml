@@ -1,0 +1,4 @@
+- name: "Project: Bahabot"
+  nodes:
+    - name: "Close Beta Server"
+      hostname: "bahabot.aotoki.dev"
