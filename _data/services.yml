@@ -1,4 +1,8 @@
-- name: "Project: Bahabot"
+- name: "New Era"
   nodes:
     - name: "Close Beta Server"
       hostname: "bahabot.aotoki.dev"
+    - name: "Beta Server"
+      hostname: "ne-beta.basaltic.tw"
+    - name: "Reborn (Public Server)"
+      hostname: "ne-reborn.basaltic.tw"
